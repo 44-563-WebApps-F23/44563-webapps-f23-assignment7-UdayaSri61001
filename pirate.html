@@ -19,48 +19,48 @@
 <h1 class="text-primary" style="--bs-text-opacity: .5;">Find the treasure by Naidu Udaya Sri</h1>
 <br>
 <div class="container-fluid">
-  <div class="bg-dark p-2 text-black bg-opacity-25">Click on the locations to search for treasure, beware the traps</div>
-    <div class="bg-white p-2 text-emphasis-dark" id="locations">Number of locations checked is zero</div>
-    <div class="bg-dark text-emphasis-dark bg-opacity-10" id="penalty"> Penalty is zero.</div>
-    <div class="bg-dark p-2 text-dark bg-opacity-50" id="penalty">Click for help.</div>
-    <div class="p-3 mb-2 bg-white text-emphasis-dark" id="help"> Help report.</div>
+  <div class="Pirate">Click on the locations to search for treasure, beware the traps</div>
+    <div id="locations">Number of locations checked is zero</div>
+    <div  id="penalty"> Penalty is zero.</div>
+    <div   id="click" onclick="showHelp()">Click for help.</div>
+    <div id="help"> Help report.</div>
 </div>
 <div class="container">
     <div class="image-container">
     <div class="row">
-      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc1"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc2"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc3"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc4"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc5"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc0" onclick="check(0)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc1" onclick="check(1)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc2" onclick="check(2)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc3" onclick="check(3)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc4" onclick="check(4)"></div>
     </div>
     <div class="row">
-      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc6"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc7"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc8"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc9"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc10"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc5" onclick="check(5)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc6" onclick="check(6)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc7" onclick="check(7)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc8" onclick="check(8)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc9" onclick="check(9)"></div>
       </div>
     <div class="row">
-      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc11"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc12"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc13"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc14"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc15"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc10" onclick="check(10)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc11" onclick="check(11)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc12" onclick="check(12)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc13" onclick="check(13)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc14" onclick="check(14)"></div>
     </div>
     <div class="row">
-      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc16"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc17"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc18"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc19"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc20"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc15" onclick="check(15)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc16" onclick="check(16)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc17" onclick="check(17)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc18" onclick="check(18)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc19" onclick="check(19)"></div>
       </div>
     <div class="row row-cols-auto">
-      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc21"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc22"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc23"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc24"></div>
-      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc25"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 1" width="100" height="100" id="loc20" onclick="check(20)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 2" width="100" height="100" id="loc21" onclick="check(21)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 3" width="100" height="100" id="loc22" onclick="check(22)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 4" width="100" height="100" id="loc23" onclick="check(23)"></div>
+      <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc24" onclick="check(24)"></div>
     </div>
     </div>
     </div>
@@ -109,6 +109,7 @@
             lastCheck = position;
         }
         function help() {
+
             console.log("triggered");
             let col = treasureLocation % 5;
             let row = Math.floor((treasureLocation - 1) / 5);
@@ -130,6 +131,10 @@
             }
             penalty += 2;
             id_penalty.innerHTML = `Penalty is ${penalty}`;
+        }
+
+        function showHelp(){
+            document.getElementById("help").textContent=help();
         }
     </script>
 </body>
