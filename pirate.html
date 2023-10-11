@@ -64,5 +64,75 @@
     </div>
     </div>
     </div>
+    <script>
+        let ids = [ "loc0" ,"loc1" ,"loc2" ,"loc3" ,"loc4" ,
+                    "loc5" ,"loc6" ,"loc7" ,"loc8" ,"loc9" , 
+                    "loc10","loc11","loc12","loc13","loc14", 
+                    "loc15","loc16","loc17","loc18","loc19", 
+                    "loc20","loc21","loc22","loc23","loc24"];
+        let checkCount = 0;
+        var penalty = 0;
+        let lastCheck = 0;
+        let treasureLocation = Math.floor(Math.random() * 25);
+        let trapLocation = Math.floor(Math.random() * 25);
+        let gameOver = false;
+
+        function check(position) {
+            if (gameOver) {
+                return;
+            }
+            var id = ids[position];
+            var img = document.getElementById(id);
+
+            if (position == treasureLocation) {
+                img.src = "treasure.jpg";
+                gameOver = true;
+                penalty = penalty - 3;
+            }
+            else if (position == trapLocation) {
+                img.src = "trap.jpg";
+                gameOver = true;
+                penalty = penalty + 4;
+            }
+            else if (trapLocation === treasureLocation) {
+                trapLocation = Math.floor(Math.random() * 25);
+            }
+            else {
+                img.src = "Bone.jpg";
+            }
+            checkCount++;
+            penalty++;
+            var id_location = document.getElementById("locations");
+            id_penalty = document.getElementById("penalty");
+            id_location.innerHTML = `Number of locations checked is  ${checkCount}`;
+            id_penalty.innerHTML = `Penalty is ${penalty}`;
+            lastCheck = position;
+        }
+        function help() {
+            console.log("triggered");
+            let col = treasureLocation % 5;
+            let row = Math.floor((treasureLocation - 1) / 5);
+            let col1 = lastCheck % 5;
+            let row1 = Math.floor((lastCheck - 1) / 5);
+            let rowDiff = Math.abs(row - row1);
+            let colDiff = Math.abs(col - col1);
+            if ((rowDiff === 1 && colDiff === 0) || (rowDiff === 0 && colDiff === 1)) {
+                console.log("can smell it");
+                document.getElementById("help").textContent = 'Can smell it';
+            }
+            else if (rowDiff + colDiff === 2) {
+                console.log("close matie");
+                document.getElementById("help").textContent = 'Close Matie';
+            }
+            else {
+                console.log("step faster");
+                document.getElementById("help").textContent = 'Step Faster';
+            }
+            penalty += 2;
+            id_penalty.innerHTML = `Penalty is ${penalty}`;
+        }
+    </script>
+</body>
+</html>
   </body>
   </html>
