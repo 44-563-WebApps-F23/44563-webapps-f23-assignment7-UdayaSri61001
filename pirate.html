@@ -82,7 +82,6 @@
            <div class="col-md-2"><img src="wurm.jpg" id="24" alt="searchlocation" style="width:200px;height:100px;" onclick="check(24)"></div>
         </div>
     </div>
-    <div id="button" type="button" class="btn btn-success" onclick="reset()">New Game</div>	
 </body>
 <script>
 	let ids = []
@@ -106,19 +105,19 @@
     tre_loc_img = document.getElementById(img_id)
     if(p==treasureLocation)
     {
-      tre_loc_img.src ="trap.jpg"
+      tre_loc_img.src ="treasure.jpg"
       gameOver=true
       penalty = penalty-3
     }
     else if (p== trapLocation)
     {
-      tre_loc_img.src ="treasure.jpg"
+      tre_loc_img.src ="trap.jpg"
       gameOver=true
       penalty=penalty+4
     }
     else
     {
-      tre_loc_img.src="wurm.jpg"
+      tre_loc_img.src="Bone.jpg"
     }
     checkCount=checkCount+1
     penalty=penalty+1
