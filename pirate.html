@@ -19,11 +19,11 @@
 <h1 class="text-primary" style="--bs-text-opacity: .5;">Find the treasure by Naidu Udaya Sri</h1>
 <br>
 <div class="container-fluid">
-  <div class="Pirate">Click on the locations to search for treasure, beware the traps</div>
-    <div id="locations">Number of locations checked is zero</div>
-    <div  id="penalty"> Penalty is zero.</div>
-    <div   id="click" onclick="showHelp()">Click for help.</div>
-    <div id="help"> Help report.</div>
+  <div class="bg-dark p-2 text-emphasis-dark bg-opacity-25">Click on the locations to search for treasure, beware the traps</div>
+    <div class="bg-white p-2 text-emphasis-dark" id="locations">Number of locations checked is zero</div>
+    <div class="bg-white p-2 bg-opacity-10" id="penalty"> Penalty is zero.</div>
+    <div class="bg-white p-2 bg-opacity-50" id="click">Click for help.</div>
+    <div class="bg-white p-2 text-emphasis-dark" id="help"> Help report.</div>
 </div>
 <div class="container">
     <div class="image-container">
@@ -63,6 +63,9 @@
       <div class="col-1"><img src="wurm.jpg" alt="Position 5" width="100" height="100" id="loc24" onclick="check(24)"></div>
     </div>
     </div>
+    </div>
+    <div>
+        <button onclick="bonusGame()">Bonus Game</button>
     </div>
     <script>
         let ids = [ "loc0" ,"loc1" ,"loc2" ,"loc3" ,"loc4" ,
@@ -133,11 +136,27 @@
             id_penalty.innerHTML = `Penalty is ${penalty}`;
         }
 
-        function showHelp(){
-            document.getElementById("help").textContent=help();
+        function bonusGame(){
+            treasureLocation = Math.floor(Math.random() * 25);
+            trapLocation = Math.floor(Math.random() * 25);
+            for(let i=0; i<24; i++){
+                if(i === trapLocation){
+                    id = document.getElementById(ids[i]);
+                    id.src = "trap.jpg";
+                }
+                else if(i === treasureLocation){
+                    id = document.getElementById(ids[i]);
+                    id.src = "treasure.jpg";
+                }
+                else{
+                    id = document.getElementById(ids[i]);
+                    id.src = "wurm.jpg";
+                }
+            }
         }
+        id_location.innerHTML = `Number of locations checked is $(checkCount)`;
+        id_penalty.innerHTML = `Penalty is ${Penalty}`;
     </script>
 </body>
 </html>
-  </body>
-  </html>
+ 
